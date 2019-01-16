@@ -1,4 +1,18 @@
 //Increases entries count
+const Clarifai = require('clarifai');
+
+const app = new Clarifai.App({
+ apiKey: '295384f299ec406ba056982f91bcc644'
+});
+
+const handleApiCall = (req, res) => {
+	app.models
+		.predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
+		.then(data => {
+			res.json(data);
+		})
+		.catch(err => res.status(400).json('Unable to work with API'))
+}
 
 const handleImage = (req, res, db) => {
 	const { id } = req.body;
@@ -13,5 +27,6 @@ const handleImage = (req, res, db) => {
 }
 
 module.exports = {
-	handleImage: handleImage
+	handleImage: handleImage,
+	handleApiCall: handleApiCall
 };
