@@ -1,6 +1,8 @@
 This is the backend of the Face Recognition app on my Github account.
 
-The backend was developed as an Express app that interacts with a postGresSQL database. It encrypts the passwords of the users and stores as a hash field. Several modules are used including:
+The backend was developed as an Express server that interacts with a postgreSQL database. It encrypts the passwords of the users and stores as a hash field. RESTful API calls are made from the React front end to perform tasks such as signing in, registering and submitting a picture to the Clarify API for face recognition.
+
+Several modules are used including:
 - bcrypt-nodejs
 - cors
 - knex.js
