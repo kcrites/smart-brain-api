@@ -1,8 +1,10 @@
 //Increases entries count
+const api = require('./config');
+
 const Clarifai = require('clarifai');
 
 const app = new Clarifai.App({
- apiKey: '295384f299ec406ba056982f91bcc644'
+ apiKey: api.clarifaiKey
 });
 
 const handleApiCall = (req, res) => {
