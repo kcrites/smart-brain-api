@@ -1,5 +1,5 @@
 //Increases entries count
-const api = require('./config');
+const api = require('./apiKeys');
 
 const Clarifai = require('clarifai');
 
